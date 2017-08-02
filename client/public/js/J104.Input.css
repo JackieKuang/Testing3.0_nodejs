@@ -1,0 +1,681 @@
+@keyframes error-shake {
+	0%, 100% {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translateX(-8px);
+		-ms-transform: translateX(-8px);
+		transform: translateX(-8px);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translateX(8px);
+		-ms-transform: translateX(8px);
+		transform: translateX(8px);
+	}
+}
+.has-error{
+	animation-name: error-shake;
+	-webkit-animation-duration: 250ms;
+	animation-duration: 250ms;
+}
+
+/* J104.Input.Text, Number, Password */
+.J104Text, .J104Number, .J104Password{
+	position: relative;
+	margin: 1px;
+}
+.J104Text.has-error:after, .J104Number.has-error:after, .J104Password.has-error:after, .J104Picker.has-error:after{
+	content: '\f06a' !important;
+	color: #c12e2a !important;
+	position: absolute;
+	right: 5px;
+	top: 7px;
+}
+.form-group-lg .has-error:after{
+  right: 8px;
+  top: 14px;
+}
+.J104Text .field, .J104Password .field, .J104Number .field{
+	resize: none;
+	margin: 1px 0;
+}
+.J104Text .field.disable:hover, .J104Number .field.disable:hover, .J104Password .field.disable:hover{
+	border: 1px solid #CCC;
+}
+.J104Text .indicator{
+	color: #FFF;
+	background-color: #40AEFF;
+	-webkit-transform: scale(0.75);
+	padding: 1px 5px;
+	border-radius: 4px;
+	opacity: 0.7;
+	white-space: nowrap;
+	line-height: 1.5;
+	position: absolute;
+	right: 0px;
+	bottom: 3px;
+}
+.J104Text .indicator.has-error{
+	background-color: #FF0000;
+}
+/* J104Text.date */
+.J104Text.date:after{
+	content: '\f073';
+	position: absolute;
+	top: 7px;
+	right: 5px;
+	color: #999;
+	z-index: 1;
+}
+.J104Text.date:hover:after{
+	color: #666;
+}
+
+/* password */
+.J104Password.has-error .eye{
+	right: 16px;
+}
+.form-group-lg .has-error .eye{
+  top: 8px;
+  right: 20px;
+}
+.J104Password .eye{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+	width: 30px;
+	height: 29px;
+	text-align: center;
+}
+.form-group-lg .eye{
+  top: 8px;
+}
+.J104Password .eye.open:before{
+	content: '\f06e';
+	color: #666;
+	line-height: 29px;
+}
+.J104Password .eye.open:hover:before{
+	color: #000;
+}
+.J104Password .eye.close:before{
+	content: '\f070';
+	color: #CCC;
+	line-height: 29px;
+}
+.J104Password .eye.close:hover:before{
+	color: #666;
+}
+
+/* J104.Input.Select */
+.J104Select{
+	position: relative;
+	cursor: pointer;
+	margin: 1px;
+}
+.J104Select.has-error{
+	animation-name: error-shake;
+	-webkit-animation-duration: 250ms;
+	animation-duration: 250ms;
+}
+.J104Select.has-error:after{
+	content: '\f06a';
+	color: #c12e2a;
+	position: absolute;
+	right: 30px;
+	top: 7px;
+}
+.J104Select .field {
+	overflow: hidden;
+	margin: 0px;
+	height: 30px;
+}
+.J104Select .field.disable {
+	color: #CCC;
+	background-color: #F2F2F2;
+	cursor: not-allowed;
+}
+.J104Select .field.disable:hover {
+	border-color: #CCC;
+}
+.J104Select .field.disable:hover:after, .J104Select .field.failure:hover:after{
+	color: #BBB;
+	border-color: #DDD;
+}
+.J104Select .field.loading:before{
+	border: 2px solid rgba(0, 0, 0, .2);
+	border-top-color: rgba(0, 0, 0, .4);
+}
+.J104Select .field.failure{
+	border: 1px solid #c12e2a;
+	color: #c12e2a;
+}
+.J104Select .field.failure:before{
+	content: '\f06a';
+	color: #c12e2a;
+	margin-right: 3px;
+	line-height: inherit;
+}
+.J104Select .field:after{
+	content: '\f078';
+	border-left: 1px solid #DDD;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	line-height: 28px;
+	padding: 0 5px;
+	background: linear-gradient(#fff, #f5f5f5);
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	color: #BBB;
+}
+.J104Select .field:hover:after{
+	color: #888;
+	border-color: #CCC;
+}
+.J104Select .field.placeholder {
+	color: #CCC;
+}
+.J104Select .field.focus{
+	border-color: #51a7e8;
+	outline: none;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.075), 0 0 5px rgba(81,167,232,0.5);
+}
+.J104Select .field.focus:after{
+	color: #666;
+	background: #F2F2F2;
+	border-color: #CCC;
+	padding-top: 1px;
+	line-height: 26px;
+}
+.J104Select .field.readOnly{
+	background-color: #EEE;
+}
+
+/* J104.Input.Picker */
+.J104Picker{
+	position: relative;
+	cursor: pointer;
+	margin: 1px;
+}
+.J104Picker .field {
+	overflow: hidden;
+	margin: 0px;
+	min-height: 30px;
+	height: auto;
+	padding: 2px 3px;
+}
+.J104Picker .field.placeholder {
+	padding: 3px 8px;
+	color: #CCC;
+}
+.J104Picker .field.focus{
+	border-color: #51a7e8;
+	outline: none;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.075), 0 0 5px rgba(81,167,232,0.5);
+}
+.J104Picker .field.readOnly{
+	background-color: #EEE;
+	cursor: default;
+}
+.J104Picker .field.disable {
+	color: #CCC;
+	background-color: #F2F2F2;
+	cursor: not-allowed;
+}
+.J104Picker .field.disable:hover {
+	border-color: #CCC;
+}
+.J104Picker .field.loading:before{
+	border: 2px solid rgba(0, 0, 0, .2);
+	border-top-color: rgba(0, 0, 0, .4);
+}
+.J104Picker .field.failure{
+	border: 1px solid #c12e2a;
+	color: #c12e2a;
+}
+.J104Picker .field.failure:before{
+	content: '\f06a';
+	color: #c12e2a;
+	margin-right: 3px;
+	line-height: inherit;
+}
+.J104Picker .typing{
+	border: none;
+	outline: none;
+	max-width: 100%;
+	font-size: inherit;
+	margin: 1px 2px;
+	padding: 1px;
+	width: 20px;
+	float: left;
+}
+.J104Picker .typing:focus{
+	box-shadow: none;
+}
+.J104Picker .tag {
+	float: left;
+	border: 1px solid #DDD;
+	color: #666;
+	background-color: #F0F0F0;
+	padding: 2px 4px 1px 8px;
+	margin: 1px;
+	border-radius: 6px;
+	font-size: 14px;
+	line-height: 17px;
+	cursor: inherit;
+}
+.J104Picker:not(.disable):not(.readOnly) .tag:hover{
+	border: 1px solid #BBB;
+	color: #000;
+	background-color: #F0F0F0;
+}
+.J104Picker .tag > .delete{
+	line-height: 14px;
+	margin-left: 3px;
+	color: #999;
+}
+.J104Picker:not(.disable):not(.readOnly) .tag > .delete:hover {
+	color: #990000;
+	cursor: pointer;
+}
+.J104Picker .tag > .delete:before{
+	content: '\f00d';
+	width: 14px;
+}
+.J104Picker .tag.behavior {
+	border: 1px solid rgba(43, 102, 154, .5);
+	color: #2b669a;
+}
+.J104Picker .tag.behavior:hover {
+	border: 1px solid rgba(43, 102, 154, 1) !important;
+	color: #2b669a;
+	background-color: rgba(43, 102, 154, .2) !important;
+}
+.J104Picker .indicator{
+	color: #FFF;
+	background: rgba(64, 174, 255, .6);
+	transform: scale(0.7);
+	padding: 3px 8px 1px 8px;
+	border-radius: 5px;
+	white-space: nowrap;
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	transition: bottom .3s;
+}
+.J104Picker.disable .indicator{
+	display: none !important;
+}
+.J104Picker .indicator.has-error{
+	background: rgba(255, 0, 0, .6);
+}
+.J104Picker:hover .indicator{
+	bottom: -23px;
+}
+
+.J104BoxMenu.treePicker-menu > .-container > .--body .item{
+	padding: 3px 30px 3px 10px !important;
+	position: relative;
+}
+.J104BoxMenu.treePicker-menu > .-container > .--body .item.hover {
+	color: #000;
+	font-weight: bold;
+	background-color: rgba(132, 208, 233, 0.2) !important;
+}
+.J104BoxMenu.treePicker-menu > .-container > .--body .item.selected {
+	color: #000 !important;
+	background-color: transparent;
+}
+.J104BoxMenu.treePicker-menu > .-container > .--body .item.selected:before{
+	content: '\f046' !important;
+	color: #2e6da4 !important;
+}
+.J104BoxMenu.treePicker-menu > .-container > .--body .item.hasChildren:after {
+	content: '\f105';
+	position: absolute;
+	right: 5px;
+	line-height: 18px;
+	width: 18px;
+	text-align: center;
+	color: #999;
+}
+.J104BoxMenu.treePicker-menu > .-container > .--body .item.hasChildren.extend:after {
+	content: '\f0da';
+	color: #333;
+}
+.J104BoxMenu.treePicker-menu > .-container > .--body .item.checkable:before {
+	content: '\f096';
+	line-height: 18px;
+	width: 18px;
+	margin-right: 5px;
+	color: #999;
+}
+
+/* J104.Input.Radio */
+.J104Radio {}
+.J104Radio label {
+	padding: 4px 0 3px 0;
+	margin: 1px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+	font-weight: normal;
+}
+.J104Radio label.inline {
+	display: inline-block;
+	margin-right: 15px;
+}
+.J104Radio input{ display: none; }
+.J104Radio .radio-peer{
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	z-index: 2;
+	margin-right: 4px;
+	vertical-align: text-bottom;
+}
+.J104Radio .radio-peer:before, .J104Radio .radio-peer:after{
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+}
+.J104Radio .radio-peer:before{
+	left: 0;
+	top: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-color: #fafafa;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3),inset 0 0 1px rgba(0,0,0,0.55);
+	transition: background-color .3s;
+}
+.J104Radio input:checked + .radio-peer:before { background-color: #3b99fc !important; }
+.J104Radio .radio-peer:after{
+	top: 5px;
+	left: 5px;
+	width: calc(100% - 5px * 2);
+	height: calc(100% - 5px * 2);
+	background-color: #fff;
+	transform: scale(0, 0);
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.1),0 0 1px rgba(0,0,0,0.3);
+	transition: transform .3s;
+}
+.J104Radio input:checked + .radio-peer:after, .J104Radio.disable input:checked + .radio-peer:after {
+	background-color: #fff !important;
+	transform: scale(1, 1);
+	opacity: 1 !important;
+}
+.J104Radio label:hover > .radio-peer:after {
+	background-color: #DDD;
+	transform: scale(1, 1);
+	box-shadow: none;
+}
+.J104Radio.readOnly label {
+	cursor: not-allowed;
+}
+.J104Radio.readOnly .radio-peer:before{
+	background-color: #DDD;
+}
+.J104Radio.disable label {
+	color: #CCC;
+	cursor: not-allowed;
+}
+.J104Radio.disable .radio-peer{ opacity: .4; }
+.J104Radio.disable .radio-peer:after, .J104Radio.readOnly .radio-peer:after { opacity: 0; }
+.J104Radio.has-error .radio-peer:before{
+	border: 1px solid #a94442;
+}
+
+/* J104.Input.Radio - switch */
+.J104Radio.switch label {
+	padding: 5px 0 4px 0;
+}
+.J104Radio.switch .radio-peer{
+	width: 30px;
+}
+.J104Radio.switch .radio-peer:before, .J104Radio.switch .radio-peer:after{
+	content: '';
+	position: absolute;
+	opacity: 1;
+}
+.J104Radio.switch.disable .radio-peer{ opacity: .4; }
+.J104Radio.switch .radio-peer:before{
+	left: 0;
+	top: 7px;
+	display: inline-block;
+	width: 100%;
+	height: 4px;
+	background-color: #CCC;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3),inset 0 0 1px rgba(0,0,0,0.55);
+	transition: background-color .3s;
+	border-radius: 2px;
+}
+.J104Radio.switch input:checked + .radio-peer:before { background-color: #3b99fc !important; }
+.J104Radio.switch label > .radio-peer:after{
+	top: 0px;
+	left: 0px;
+	width: 18px;
+	height: 18px;
+	background: linear-gradient(transparent,rgba(0,0,0,.1)) #FFF;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	border: 1px solid #CCC;
+	transition: left .3s;
+	transform: none;
+}
+.J104Radio.switch label:hover > .radio-peer:after {
+	border: 1px solid #999;
+}
+.J104Radio.switch input:checked + .radio-peer:after, .J104Radio.switch.disable input:checked + .radio-peer:after {
+	left: 12px;
+	border: 1px solid rgba(59,153,252,.9) !important;
+	box-shadow: 0 0px 3px 0 rgba(59,153,252,.8);
+}
+.J104Radio.switch.has-error .radio-peer:after{
+	border: 1px solid #a94442 !important;
+}
+
+/* J104.Input.Checkbox */
+.J104Checkbox label {
+	padding: 4px 0 3px 0;
+	margin: 1px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+	font-weight: normal;
+}
+.J104Checkbox label.inline {
+	display: inline-block;
+	margin-right: 15px;
+}
+.J104Checkbox.readOnly label {
+	cursor: not-allowed;
+}
+.J104Checkbox.disable label {
+	color: #CCC;
+	cursor: not-allowed;
+}
+.J104Checkbox input{ display: none; }
+.J104Checkbox .checkbox-peer{
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	z-index: 2;
+	margin-right: 4px;
+	vertical-align: text-bottom;
+}
+.J104Checkbox .checkbox-peer:before, .J104Checkbox .checkbox-peer:after{
+	position: absolute;
+}
+.J104Checkbox.disable .checkbox-peer{ opacity: .4; }
+.J104Checkbox .checkbox-peer:before{
+	content: '';
+	left: 0;
+	top: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	background-color: #fafafa;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3),inset 0 0 1px rgba(0,0,0,0.55);
+	transition: background-color .3s;
+}
+.J104Checkbox.has-error .checkbox-peer:before{
+	border: 1px solid #a94442;
+}
+.J104Checkbox.readOnly .checkbox-peer:before{
+	background-color: #DDD;
+}
+.J104Checkbox input:checked + .checkbox-peer:before { background-color: #3b99fc !important; }
+.J104Checkbox .checkbox-peer:after{
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 14px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f00c';
+	color: #FFF;
+	top: 2px;
+	left: 2px;
+	transform: scale(0, 0);
+	transition: transform .2s;
+}
+.J104Checkbox.disable .checkbox-peer:after, .J104Checkbox.readOnly .checkbox-peer:after { opacity: 0; }
+.J104Checkbox input:checked + .checkbox-peer:after, .J104Checkbox.disable input:checked + .checkbox-peer:after {
+	transform: scale(1, 1);
+	opacity: 1 !important;
+	color: #FFF !important;
+}
+.J104Checkbox label:hover > .checkbox-peer:after {
+	color: #CCC;
+	transform: scale(1, 1);
+}
+
+/* J104.Input.Checkbox - switch */
+.J104Checkbox.switch label {
+	padding: 5px 0 4px 0;
+}
+.J104Checkbox.switch .checkbox-peer{
+	width: 30px;
+}
+.J104Checkbox.switch .checkbox-peer:before, .J104Checkbox.switch .checkbox-peer:after{
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.J104Checkbox.switch .checkbox-peer:before{
+	border-radius: 9px;
+}
+.J104Checkbox.switch .checkbox-peer:after{
+	top: 1px;
+	left: 1px;
+	width: 16px;
+	height: 16px;
+	background: linear-gradient(transparent,rgba(0,0,0,.1)) #FFF;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	border: 1px solid #CCC;
+	transition: left .3s;
+	transform: none;
+}
+.J104Checkbox.switch input:checked + .checkbox-peer:after, .J104Checkbox.switch.disable input:checked + .checkbox-peer:after {
+	left: 13px;
+	border: 1px solid rgba(48, 99, 252, 0.9) !important;
+	box-shadow: 0 0px 1px 0 rgba(59,153,252,.5);
+}
+.J104Checkbox.switch:not(.readOnly.disable) label:hover > .checkbox-peer:after {
+	border: 1px solid #999;
+}
+
+
+/* J104.Input.File */
+.J104File{
+	position: relative;
+}
+.J104File >.-files{
+	width: 100%;
+	min-height: 34px;
+	padding: 5px 35px 5px 5px;
+	border-radius: 3px;
+	color: #DDD;
+}
+.J104File.disable >.-files{
+	color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .1);
+}
+.J104File.has-error >.-files{
+	background-color: rgba(255, 0, 0, .1);
+}
+.J104File >.-files > .fileWrapper{
+	margin: 1px 0;
+}
+.J104File >.-files > .fileWrapper > .-file{
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	color: #000;
+	background-color: #F2F2F2;
+	display: inline-block;
+	padding: 3px 20px 2px 5px;
+	max-width: 100%;
+	position: relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: default;
+}
+.J104File >.-files > .fileWrapper.loading > .-file{
+	display: none;
+}
+.J104File >.-files .-file > .--size{
+	color: rgba(0, 0, 0, .6);
+	font-size: .9em;
+	margin-left: 3px;
+}
+.J104File.disable >.-files .-file > .--delete{
+	display: none;
+}
+.J104File >.-files .-file > .--delete{
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	padding: 2px 0px 3px 4px;
+	color: #999;
+}
+.J104File >.-files .-file > .--delete:hover {
+	color: #900;
+	cursor: pointer;
+}
+.J104File >.-files .-file > .--delete:before{
+	content: '\f00d';
+}
+.J104File > .-addBtn{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: #666;
+	background: white;
+	border: 1px solid #DDD;
+	padding: 4px 7px;
+}
+.J104File > .-addBtn:before{
+	content: '\f067';
+}
+.J104File > .-addBtn:hover{
+	color: #000;
+	border: 1px solid #C6C6C6;
+	z-index: 3;
+}
+.J104File > .-addBtn:active{
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+	border: 1px solid #CCC;
+	z-index: 2;
+}

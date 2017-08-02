@@ -1,0 +1,149 @@
+/* J104.Grid */
+.J104Grid{
+	clear: both;
+	margin-top: 5px;
+}
+.J104Grid > table{
+	width: 100%;
+	background: #FFF;
+	box-shadow: none;
+	color: rgba(0,0,0,.6);
+	border-collapse: separate;
+	border-spacing: 0;
+}
+.J104Grid.empty > table{
+	opacity: .2;
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	-o-user-select: none;
+	user-select: none;
+	cursor: not-allowed;
+}
+.J104Grid > table caption{
+	background-color: #FFF;
+	padding: 5px 0;
+	border-top: 1px dotted #DDD;
+	z-index: 8;
+}
+.J104Grid > table caption > *{
+	vertical-align: middle;
+}
+.J104Grid > table caption .btn-group:not(:first-child){
+	margin-left: 10px;
+}
+.J104Grid > table > thead th, .J104Grid > table > thead td{
+	background: #F9FAFB;
+	text-align: inherit;
+	color: rgba(0,0,0,.87);
+	padding: 12px 8px;
+	vertical-align: inherit;
+	border-top: 1px solid rgba(34,36,38,.15);
+	border-bottom: 1px solid rgba(34,36,38,.1);
+	font-weight: bold;
+	text-align: left;
+}
+.J104Grid > table > tbody tr:hover {
+	background-color: rgba(251, 255, 0, 0.16);
+	-webkit-transition: background-color 200ms linear;
+	-moz-transition: background-color 200ms linear;
+	-o-transition: background-color 200ms linear;
+	-ms-transition: background-color 200ms linear;
+	transition: background-color 200ms linear;
+}
+.J104Grid > table > tbody td {
+	border-bottom: 1px solid #EEE;
+	padding: 10px 8px;
+}
+.J104Grid > table > tbody tr:last-child td {
+	border-bottom: 1px solid rgba(34,36,38,.15);
+}
+.J104Grid > table td > .checkbox {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	z-index: 2;
+	margin: 2px;
+	vertical-align: text-bottom;
+}
+.J104Grid > table td > .checkbox:before, .J104Grid > table td > .checkbox:after{
+	position: absolute;
+	cursor: pointer;
+}
+.J104Grid > table td > .checkbox:before{
+	content: '';
+	left: 0;
+	top: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	background-color: #fafafa;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3),inset 0 0 1px rgba(0,0,0,0.55);
+	transition: background-color .3s;
+}
+.J104Grid > table td > .checkbox.checked:before { background-color: #3b99fc !important; }
+.J104Grid > table td > .checkbox:after{
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 14px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f00c';
+	color: #FFF;
+	top: 2px;
+	left: 2px;
+	transform: scale(0, 0);
+	transition: transform .2s;
+}
+.J104Grid > table td > .checkbox:hover:after {
+	color: #CCC;
+	transform: scale(1, 1);
+}
+.J104Grid > table td > .checkbox.checked:after {
+	transform: scale(1, 1);
+	opacity: 1 !important;
+	color: #FFF !important;
+}
+.J104Grid > table > tbody td.controls{
+	text-align: right;
+}
+.J104Grid > table > tbody td.controls > .ctrl {
+	display: inline-block;
+	border-radius: 0;
+	margin: 0 -1px 0 0;
+	color: #555;
+	background: white;
+	border: 1px solid #DDD;
+	padding: 4px 6px;
+	min-width: 30px;
+	text-align: center;
+}
+.J104Grid > table > tbody td.controls > .ctrl:before {
+}
+.J104Grid > table > tbody td.controls > .ctrl:first-child {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.J104Grid > table > tbody td.controls > .ctrl:last-child {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.J104Grid > table > tbody td.controls > .ctrl.disable:before {
+	opacity: .2;
+	cursor: not-allowed !important;
+}
+.J104Grid > table > tbody td.controls > .ctrl:not(.disable):hover {
+	cursor: pointer;
+	color: #000;
+	border: 1px solid #C6C6C6;
+	z-index: 3;
+}
+.J104Grid > table > tbody td.controls > .ctrl:not(.disable):active, .J104Grid > table > tbody td.controls > .ctrl:not(.disable).active {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+	border: 1px solid #CCC;
+	z-index: 2;
+}
+.J104Grid > table > tbody td.controls > .edit:before { content: '\f044'; }
+.J104Grid > table > tbody td.controls > .delete:before { content: '\f014'; }

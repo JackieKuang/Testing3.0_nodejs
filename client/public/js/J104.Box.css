@@ -1,0 +1,593 @@
+/** J104.Box **/
+.J104Box.wrapper {
+	position: absolute;
+}
+.J104Box > .-container{
+	background-color: #FFF;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, .4), 0 0 5px rgba(0, 0, 0, .4);
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+}
+.J104Box > .-pointer {
+	overflow: hidden;
+	position: absolute;
+}
+.J104Box > .-pointer::after {
+	position: absolute;
+	content: ' ';
+	width: 20px;
+	height: 20px;
+	background: #FFF;
+	transform: rotate(45deg);
+	box-shadow: 0 0px 4px rgba(0, 0, 0, 0.6);
+}
+.J104Box > .-pointer.top,
+.J104Box > .-pointer.bottom {
+	width: 29px;
+	height: 14px;
+}
+.J104Box > .-pointer.top::after {
+	left: 4px;
+	top: 6px;
+}
+.J104Box > .-pointer.bottom::after {
+	left: 4px;
+	bottom: 6px;
+}
+.J104Box > .-pointer.right,
+.J104Box > .-pointer.left {
+	width: 14px;
+	height: 29px;
+}
+.J104Box > .-pointer.right::after {
+	left: -14px;
+	top: 4px;
+}
+.J104Box > .-pointer.left::after {
+	left: 6px;
+	top: 4px;
+}
+.J104Box > .-container > .--header{
+	padding: 5px;
+	background-color: #EEE;
+}
+.J104Box > .-container > .--body{
+	padding: 5px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+.J104Box > .-container > .--footer{
+	padding: 5px;
+	background-color: #EEE;
+}
+/* theme: empty */
+.J104Box.empty > .-container{
+	background-color: transparent !important;
+}
+.J104Box.empty > .-container > .--body{
+	padding: 0px !important;
+}
+
+.J104BoxLockScroll {
+	overflow: hidden;
+}
+
+/** J104.Box.Tip **/
+@keyframes fadeInDown-10 {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-10px);
+		-ms-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes fadeInUp-10 {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(10px);
+		-ms-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes fadeInLeft-10 {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(10px);
+		-ms-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+@keyframes fadeInRight-10 {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-10px);
+		-ms-transform: translateX(-10px);
+		transform: translateX(-10px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+@keyframes fadeOutDown-10 {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(10px);
+		-ms-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+}
+@keyframes fadeOutUp-10 {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-10px);
+		-ms-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+@keyframes fadeOutLeft-10 {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateX(0px);
+		-ms-transform: translateX(0px);
+		transform: translateX(0px);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: translateX(-10px);
+		-ms-transform: translateX(-10px);
+		transform: translateX(-10px);
+	}
+}
+@keyframes fadeOutRight-10 {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateX(0px);
+		-ms-transform: translateX(0px);
+		transform: translateX(0px);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: translateX(10px);
+		-ms-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+}
+.an-fadeInDown-10{ animation-name: fadeInDown-10; }
+.an-fadeInUp-10{ animation-name: fadeInUp-10; }
+.an-fadeInLeft-10{ animation-name: fadeInLeft-10; }
+.an-fadeInRight-10{ animation-name: fadeInRight-10; }
+.an-fadeOutDown-10{ animation-name: fadeOutDown-10; }
+.an-fadeOutUp-10{ animation-name: fadeOutUp-10; }
+.an-fadeOutLeft-10{ animation-name: fadeOutLeft-10; }
+.an-fadeOutRight-10{ animation-name: fadeOutRight-10; }
+.J104BoxTip.wrapper {
+	position: absolute;
+}
+.J104BoxTip > .-container {
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background: #000;
+	color: #fff;
+	box-shadow: 0 0 6px rgba(0,0,0,.6);
+	opacity: .8;
+	font-size: 12px;
+}
+.J104BoxTip > .-pointer {
+	overflow: hidden;
+	position: absolute;
+	opacity: .75;
+}
+.J104BoxTip > .-pointer::after {
+	position: absolute;
+	content: ' ';
+	width: 12px;
+	height: 12px;
+	background: #000;
+	transform: rotate(45deg);
+	box-shadow: 0 0 6px rgba(0,0,0,.4);
+}
+.J104BoxTip > .-pointer.top, .J104BoxTip > .-pointer.bottom {
+	width: 20px;
+	height: 10px;
+}
+.J104BoxTip > .-pointer.top::after {
+	left: 4px;
+	top: 5px;
+}
+.J104BoxTip > .-pointer.bottom::after {
+	left: 4px;
+	bottom: 5px;
+}
+.J104BoxTip > .-pointer.right, .J104BoxTip > .-pointer.left {
+	width: 10px;
+	height: 20px;
+}
+.J104BoxTip > .-pointer.right::after {
+	left: -7px;
+	top: 4px;
+}
+.J104BoxTip > .-pointer.left::after {
+	left: 5px;
+	top: 4px;
+}
+.J104BoxTip > .-container > .--body {
+	padding: 8px 15px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+/* theme: hint */
+.J104BoxTip.hint > .-container{
+	background: #245580;
+	font-size: 12px;
+	border-radius: 20px;
+}
+.J104BoxTip.hint > .-pointer::after {
+	background: #265a88;
+}
+.J104BoxTip.hint > .-container > .--body:before{
+	content: '\f0eb';
+	margin-right: 5px;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 16px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	opacity: .7;
+}
+/* theme: validate */
+.J104BoxTip.validate > .-container{
+	background: #c12e2a;
+	font-size: 12px;
+	border-radius: 4px;
+}
+.J104BoxTip.validate > .-pointer::after {
+	background: #c12e2a;
+}
+.J104BoxTip.validate > .-container > .--body:before {
+	content: '\f06a';
+	margin-right: 5px;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 16px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/** J104.Box.Notice **/
+@keyframes tada {
+	0% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+
+	10%, 20% {
+		-webkit-transform: scale(0.9) rotate(-3deg);
+		-ms-transform: scale(0.9) rotate(-3deg);
+		transform: scale(0.9) rotate(-3deg);
+	}
+
+	30%, 50%, 70%, 90% {
+		-webkit-transform: scale(1.1) rotate(3deg);
+		-ms-transform: scale(1.1) rotate(3deg);
+		transform: scale(1.1) rotate(3deg);
+	}
+
+	40%, 60%, 80% {
+		-webkit-transform: scale(1.1) rotate(-3deg);
+		-ms-transform: scale(1.1) rotate(-3deg);
+		transform: scale(1.1) rotate(-3deg);
+	}
+
+	100% {
+		-webkit-transform: scale(1) rotate(0);
+		-ms-transform: scale(1) rotate(0);
+		transform: scale(1) rotate(0);
+	}
+}
+.an-tada { animation-name: tada; }
+.J104BoxNotice.wrapper{
+	position: absolute;
+	max-width: 540px;
+}
+.J104BoxNotice > .-container{
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	background: #333;
+	background-image: linear-gradient(to bottom,#444,#222);
+}
+.J104BoxNotice > .-container > .--body{
+	padding: 15px 20px !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.J104BoxNotice > .-container > .--body:before{
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 1.25em;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: middle;
+	position: absolute;
+	left: 20px;
+	top: 16px;
+	width: 20px;
+	text-align: center;
+}
+.J104BoxNotice > .-container > .--footer > .counterWrapper{
+	padding: 0 2px 2px 2px;
+}
+.J104BoxNotice > .-container > .--footer > .counterWrapper > .counter{
+	background-color: #FFF;
+	height: 2px;
+	opacity: .3;
+}
+
+/* theme: success, info, warning, error */
+.J104BoxNotice.success > .-container{
+	background: #70a800;
+	background-image: linear-gradient(to bottom, #95cc2a, #70a800);
+}
+.J104BoxNotice.info > .-container{
+	background: #2b91d9;
+	background-image: linear-gradient(to bottom, #5abaff, #2b91d9);
+}
+.J104BoxNotice.warning > .-container{
+	background: #ff9b24;
+	background-image: linear-gradient(to bottom, rgb(255, 159, 16), #ff7500);
+}
+.J104BoxNotice.error > .-container{
+	background: #b02222;
+	background-image: linear-gradient(to bottom, #ee2222, #b02222);
+}
+.J104BoxNotice.success > .-container > .--body:before { content: '\f00c'; }
+.J104BoxNotice.info > .-container > .--body:before { content: '\f05a'; }
+.J104BoxNotice.warning > .-container > .--body:before { content: '\f071'; }
+.J104BoxNotice.error > .-container > .--body:before { content: '\f00d'; }
+.J104BoxNotice.success .--body, .J104BoxNotice.info .--body, .J104BoxNotice.warning .--body, .J104BoxNotice.error .--body{
+	padding-left: 45px !important;
+}
+
+/** J104.Box.Dialog **/
+.J104BoxDialog.wrapper {
+	position: absolute;
+}
+.J104BoxDialog .-container{
+	background-color: #FFF;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, .4), 0 0 5px rgba(0, 0, 0, .4);
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+}
+.J104BoxDialog .-container > .--header{
+	background-color: #F2F2F2;
+	position: relative;
+	box-shadow: inset 0 -2px 6px -2px rgba(0, 0, 0, .1);
+	border-bottom: 1px solid #CCC;
+	border-radius: 3px 3px 0 0;
+}
+.J104BoxDialog .-container > .--header.draggable{ cursor: move; }
+.J104BoxDialog .-container > .--header > .title{
+	position: relative;
+	word-break: break-all;
+	padding: 10px 20px;
+	line-height: 20px;
+	color: #000;
+}
+.J104BoxDialog .-container > .--header > .title:before{
+	content: '\f138';
+	margin-right: 6px;
+	float: left;
+	line-height: inherit;
+}
+.J104BoxDialog .-container > .--header > .close{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 40px;
+	text-align: center;
+	cursor: pointer;
+	color: #CCC;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	transform: translateY(-50%);
+}
+.J104BoxDialog .-container > .--header > .close:hover{
+	color: #C00;
+}
+.J104BoxDialog .-container > .--header > .close:before{
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f00d';
+	line-height: 40px;
+	font-size: 20px;
+}
+.J104BoxDialog .-container > .--body{
+	padding: 10px 20px 10px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+.J104BoxDialog .-container > .--footer{
+	padding: 10px 20px;
+	background-color: #F6F6F6;
+	border-radius: 0 0 4px 4px;
+	border-top: 1px solid #CCC;
+	text-align: center;
+}
+.J104BoxDialog .-container > .--footer .btn{
+	margin: 0 5px;
+}
+
+/** J104.Box.Confirm **/
+.J104BoxConfirm.wrapper {
+	position: absolute;
+}
+.J104BoxConfirm > .-container{
+	background-color: #FFF;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, .4), 0 0 5px rgba(0, 0, 0, .4);
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	max-width: 480px;
+	min-width: 250px;
+}
+.J104BoxConfirm > .-container > .--body{
+	padding: 30px 30px 20px 80px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.J104BoxConfirm > .-container > .--body:before{
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 40px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	float: left;
+	content: '\f059';
+	margin: -10px 0px 0px -50px;
+	color: #265a88;
+}
+.J104BoxConfirm > .-container > .--footer{
+	padding: 0px 20px 15px 20px;
+	text-align: center;
+}
+.J104BoxConfirm > .-container > .--footer .btn{
+	margin: 0 4px;
+}
+
+/** J104.Box.Menu **/
+.J104BoxMenu.wrapper{
+	position: absolute;
+}
+.J104BoxMenu > .-container{
+	border: 1px solid #AAA;
+	background-color: #FFF;
+	box-shadow: 0 0 5px rgba(102, 175, 233, 0.9);
+	border-radius: 3px;
+	width: auto;
+	height: auto;
+	max-height: 600px;
+	padding: 0px;
+	margin: 0px;
+	overflow-y: auto;
+}
+.J104BoxMenu > .-container > .--body.loading{
+	padding: 10px;
+}
+.J104BoxMenu > .-pointer {
+	overflow: hidden;
+	position: absolute;
+}
+.J104BoxMenu > .-pointer::after {
+	position: absolute;
+	content: ' ';
+	width: 11px;
+	height: 11px;
+	background: #FFF;
+	transform: rotate(45deg);
+	box-shadow: 0 0 5px rgba(102, 175, 233, 0.9);
+	border: 1px solid #AAA;
+}
+.J104BoxMenu > .-pointer.top, .J104BoxMenu > .-pointer.bottom {
+	width: 20px;
+	height: 11px;
+}
+.J104BoxMenu > .-pointer.top::after {
+	left: 4px;
+	top: 5px;
+}
+.J104BoxMenu > .-pointer.bottom::after {
+	left: 4px;
+	bottom: 5px;
+}
+.J104BoxMenu > .-pointer.right, .J104BoxMenu > .-pointer.left {
+	width: 10px;
+	height: 20px;
+}
+.J104BoxMenu > .-pointer.right::after {
+	left: -7px;
+	top: 4px;
+}
+.J104BoxMenu > .-pointer.left::after {
+	left: 5px;
+	top: 4px;
+}
+.J104BoxMenu > .-container > .--body .item{
+	color: #666;
+	padding: 3px 10px;
+	cursor: pointer;
+}
+.J104BoxMenu > .-container > .--body .item.hover {
+	color: #000;
+	background-color: rgba(132, 208, 233, 0.2);
+}
+.J104BoxMenu > .-container > .--body .item.selected {
+	font-weight: bold;
+	color: #FFF !important;
+	background-color: rgba(0, 130, 233, 0.6);
+}
+.J104BoxMenu > .-container > .--body .hr{
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #FFF;
+	margin: 5px 1px;
+}
+.J104BoxMenu > .-container > .--body .empty{
+	color: #999;
+	padding: 4px 10px;
+}
+.J104BoxMenu > .-container > .--body .empty:before{
+	content: '\f071';
+	margin-right: 3px;
+}

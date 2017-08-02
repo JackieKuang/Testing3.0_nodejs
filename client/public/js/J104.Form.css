@@ -1,0 +1,11 @@
+/* J104.Form */
+.J104Form .submit.invalid{
+	animation-name: error-shake;
+	-webkit-animation-duration: 250ms;
+	animation-duration: 250ms;
+}
+
+.J104Form .submit.loading:before{
+	border: 2px solid rgba(255, 255, 255, .5);
+	border-top-color: rgba(255, 255, 255, 1);
+}

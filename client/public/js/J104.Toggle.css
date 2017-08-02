@@ -1,0 +1,66 @@
+/* J104.Toggle */
+.J104Toggle{
+	display: inline-block;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	padding: 10px 30px;
+	cursor: pointer;
+	margin: 10px 0;
+}
+
+.J104Toggle:hover{
+	border: 1px solid #BBB;
+}
+
+.J104Toggle.selected{
+	background-color: #EEE;
+	border: 1px solid #BBB;
+}
+
+/* J104.Tab */
+.J104Tab{
+	display: inline-block;
+	background-color: #F2F2F2;
+	border: 1px solid #DDD;
+	border-bottom: 0px !important;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding: 10px 20px;
+	cursor: pointer;
+	margin: 0;
+}
+
+.J104Tab:hover{
+	border: 1px solid #BBB;
+}
+
+.J104Tab.selected{
+	background-color: #FFF;
+	border: 1px solid #BBB;
+	padding: 11px 20px;
+	margin-bottom: -1px;
+}
+
+/* J104.JumpTab */
+.J104JumpTab{
+	display: inline-block;
+	background-color: #F2F2F2;
+	border: 1px solid #DDD;
+	border-bottom: 0px !important;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding: 10px 20px;
+	cursor: pointer;
+	margin: 0;
+}
+
+.J104JumpTab:hover{
+	border: 1px solid #BBB;
+}
+
+.J104JumpTab.selected{
+	background-color: #FFF;
+	border: 1px solid #BBB;
+	padding: 11px 20px;
+	margin-bottom: -1px;
+}
