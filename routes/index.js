@@ -3,7 +3,7 @@
 const constants = require('../constants');
 
 const API_ROUTES = [
-	//{ route: '/meta', 			path: './api/api-meta' }
+	{ route: '/test', 			path: './api/testapi' }
 ];
 
 module.exports = (app) => {

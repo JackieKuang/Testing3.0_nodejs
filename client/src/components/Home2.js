@@ -3,7 +3,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-class Home extends React.Component {
+class Home2 extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -15,11 +15,11 @@ class Home extends React.Component {
 	}
 
 	test2() {
-		console.log('Home');
+		console.log('Home2');
 
 		this.ajax = new Ajax({
 			method: 'get',
-			url: '/api/test/t2',
+			url: '/api/test/t1',
 			onComplete: () => {
 				console.log('onComplete');
 			},
@@ -32,18 +32,16 @@ class Home extends React.Component {
 
 	render() {
 		{
-			console.log('Home render');
+			console.log('Home2 render');
 		}
 		return <div className="container-fluid">
-			// Home
+			// Home2
 			<br/>
-			<button onClick={()=>{this.test2();}}>Home</button>
+			<button onClick={()=>{this.test2();}}>Home2</button>
 			<br/>
-			<Link to="/t2">t2</Link>
-			<br/>
-			<Link to="/t3">t3</Link>
+			<Link to="/t1">t1</Link>
 		</div>
 	}
 }
 
-export default Home;
+export default Home2;
