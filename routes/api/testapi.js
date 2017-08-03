@@ -30,8 +30,8 @@ module.exports = (app) => {
 		//res.redirect('/t1');
 		let a = service.getMessage();
 		console.log(a);
-		//next('a5');
-		next();
+		next('a5');
+		//next();
 		//return res.json(jm.success("{data:'data t1'}"));
 	});
 
@@ -51,7 +51,7 @@ module.exports = (app) => {
 	});
 
 	router.use((a5, req, res, next) => {
-		res.send('testapi a1 router finish!');
+		res.send('testapi a5 router finish!');
 		//console.log('testapi t1 router finish!');
 	});
 
