@@ -23,7 +23,8 @@ module.exports = (app) => {
 
 	router.get(['/t3'], (req, res, next) => {
 		console.log('action t3');
-		next();
+		res.redirect('/t2');
+		//next();
 	});
 
 	//----
